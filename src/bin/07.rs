@@ -67,7 +67,8 @@ pub fn part_two(input: &str) -> Option<u64> {
                     0 => val += operands[j],
                     1 => val *= operands[j],
                     2 => {
-                        let digits = format!("{}", operands[j]).len() as u32;
+                        // let digits = format!("{}", operands[j]).len() as u32;
+                        let digits = operands[j].checked_ilog10().unwrap_or(0) + 1;
                         val = val * (10u32.pow(digits) as u64) + operands[j];
                     },
                     _ => {}

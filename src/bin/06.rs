@@ -1,5 +1,5 @@
-use std::collections::VecDeque;
 use std::collections::{HashMap, HashSet};
+use advent_of_code::point_to_str;
 
 advent_of_code::solution!(6);
 
@@ -81,9 +81,6 @@ pub fn part_one(input: &str) -> Option<u64> {
     Some(walk)
 }
 
-fn point_to_str(point: &[usize;2]) -> String {
-    format!("Ln {}, Col {}", point[1]+1, point[0]+1)
-}
 
 // 420 is too low
 pub fn part_two(input: &str) -> Option<u64> {
